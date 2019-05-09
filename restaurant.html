@@ -1,0 +1,277 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant</title>
+  <style type="text/css">
+  :root{
+  --background:rgba(85,214,170,.85);
+  }
+  *,*::before,*::after{
+  box-sizing: border-box;
+  }
+  
+  body{
+  margin: 0;
+  background: #faf2e4;
+  font-family: 'work sans',sans-serif;
+  font-weight: 400;
+  }
+  
+ .content{
+ height: 200vh;
+ background-color: #333;
+ background-blend-mode: multiply;
+ background-size: cover;
+ display: grid;
+ place-items:center;
+ }
+  
+/*navigation:styles start here*/
+header{
+background: var(--background);
+text-align: center;
+position: fixed;
+z-index: 999;
+width: 100%;
+}
+.nav-toggle{
+display: none;
+}
+.nav-toggle-lable{
+position: absolute;
+top: 0;
+left: 0;
+margin-left: 1em;
+border: 1px solid red;
+height: 100%;
+display: flex;
+align-items: center;
+}
+.nav-toggle-lable span,
+.nav-toggle-lable span::before,
+.nav-toggle-lable span::after{
+display: block;
+background: white;
+height: 2px;
+width: 2em;
+border-radius: 2px;
+position: relative;
+}
+
+.nav-toggle-lable span::before,
+.nav-toggle-lable span::after{
+content: '';
+position: absolute;
+}
+
+.nav-toggle-lable span::before{
+bottom: 7px;
+}
+
+.nav-toggle-lable span::after{
+top: 7px;
+}
+
+nav{
+position: absolute;
+text-align: left;
+top: 100%;
+left: 0;
+background: var(--background);
+width: 100%;
+transform: scale(1,.0);
+transform-origin: top;
+transition: transform 400ms ease-in-out;
+}  
+ 
+ nav ul{
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ } 
+
+nav li{
+margin-bottom: 1em;
+margin-left: 1em;
+}
+
+nav a{
+color: white;
+text-decoration: none;
+font-size: 1.2rem;
+text-transform: uppercase;
+opacity: 0;
+transition: opacity 150ms ease-in-out ;
+}
+
+nav a:hover{
+color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav {
+opacity: 1;
+transition: :opacity 250ms ease-in-out 250ms
+}
+
+@media screen and (min-width:800px){
+.nav-toggle-lable{
+display: none;
+}
+
+header{
+  grid-area: header;
+display: grid;
+grid-template-columns: 1fr auto minmax(600px,3fr)1fr;
+}
+
+.Sorrento{
+grid-column: 2 / 3;
+}
+
+ nav{
+ all: unset;
+ grid-column: 3/4;
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ } 
+  
+  nav ul{
+  display: flex;
+  
+  }
+  
+ nav li{
+ margin-left: 3em;
+ margin-bottom: 0;
+ } 
+  
+nav a{
+opacity: 1;
+position: relative;
+}  
+  
+nav a::before{
+content: '';
+display: block;
+height: 5px;
+background: black;
+position: absolute;
+top: -.75em;
+left: 0;
+right: 0;
+transform: scale(0,1);
+transition: transform ease-in-out 250ms;
+}  
+ 
+ nav a:hover::before{
+ transform: scale(1,1);
+ }
+ }
+footer{
+  grid-area: footer;
+  text-align: center;
+}
+
+.image{
+  grid-area: image;
+}
+.aboutus{
+  grid-area: aboutus;
+}
+.contact{
+  grid-area: contact;
+}
+.hours{
+  grid-area: hours;
+}
+.footer{
+  grid-area: footer;
+}
+ .grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header'
+    'image image image image'
+    'aboutus aboutus contact hours'
+    'footer footer footer footer';
+  grid-gap: 10px;
+ 
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  padding: 10px;
+ 
+}
+
+ 
+  
+  
+  
+  
+  </style>
+  </head>
+
+
+<body>
+
+<div class="grid-container">
+
+  <header>
+    <h1 class="Sorrento">Sorrento</h1>
+    <input type="checkbox"id="nav-toggle" class="nav-toggle">   
+    <nav>
+      <ul>
+        <li><a href="aboutus.html">aboutus</a></li>
+        <li><a href="menulist.html">menulist</a></li>
+        <li><a href="testimonials.html">testimonials</a></li>
+        <li><a href="Contact.html">contact</a></li>
+      </ul>
+    </nav>
+    <lable for="nav-toggle"class="nav-toggle-lable">
+    <span></span>
+    </lable>
+  </header>
+
+  <div class="image">
+    <img src="images/newimage3.jpg" width="100%" height="620" alt=""/>
+  </div>
+
+  <div class="aboutus">
+    <h2>About us</h2>
+    <p>More than a decade after first arriving in San Francisco to work at his uncle’s landmark Mill Valley restaurant, Piazza D’Angelo, Vittorio is back in the West Portal neighborhood that first welcomed him—a place where he knew he would one day return to open his own place.</p>
+    <p>
+    <p>Vittorio, like so many other bambini, picked up on the nuances of life in the kitchen, next to his mother. Not only did she teach him about food and cooking, but she also taught him to share its nourishment with others. Those lessons have served him well in his many years in restaurant management. For more than 15 years, Vittorio has traveled the world honing his skills as a front-of-the-house specialist, waiting for the appropriate time to create his vision of his own dining space. His resume includes management positions at his uncle’s Mill Valley’s landmark Piazza D’Angelo, Burlingame’s Ecco, Sapore Italiano, and restaurants in San Carlos. A casual conversation led him back to West Portal, the close-knit residential community he connected with when he first arrived in San Francisco. Now, more than a decade later, he is back with his wife and newborn daughter, and with family and friends cheering him on and celebrating his first dining destination.</P>
+  </div>
+
+  <div class="contact">
+    <h2>Contact us</h2>
+    <p>FOR GENERAL INQUIRIES:</p>
+    <p> <a href="info@sorrento.com">info@sorrento.com</a></p>
+    <p>San Francisco – 415.742.0300</p>
+    <p>San Carlos – 650.591.5700</p>
+  </div>
+
+  <div class="hours">
+    <h3>Hours</h3> 
+    <p><b>Monday through Friday</b></p>
+    <p>Lunch – 11:30 to 3:00</p>
+    <p>Dinner – 5:00 to 10:00</p>
+    <p>Saturday – 11:00 to 10:00</p>
+    <p>Sunday – 11:00 to 9:00</p>
+  </div>
+
+  <footer>
+    <div><pre><b>Restaurant   Menu   Testimonials   Contact</b> </pre>
+    	&copy; 2019 all right reserved.asha patel.WK5 assignmemt<div>
+  </footer>
+</div>
+
+</body>
+</html>
